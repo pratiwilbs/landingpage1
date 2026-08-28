@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pratiwi Lubis - Portofolio</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f6f3;
+            color: #2d2a24;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== HEADER / NAV ===== */
+        header {
+            background: #ffffff;
+            padding: 18px 0;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a3f35;
+        }
+
+        .logo span {
+            color: #b58d6b;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: #5a4f43;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #b58d6b;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 60px 0 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-text {
+            flex: 1 1 380px;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: #e8e0d8;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #4a3f35;
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+        }
+
+        .hero-text h1 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .hero-text h1 span {
+            color: #b58d6b;
+        }
+
+        .hero-text .subtitle {
+            font-size: 18px;
+            color: #6b5f52;
+            margin-bottom: 16px;
+        }
+
+        .hero-text p {
+            color: #5a4f43;
+            max-width: 480px;
+            margin-bottom: 24px;
+        }
+
+        .hero-image {
+            flex: 0 0 220px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+            border: 4px solid #ffffff;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #b58d6b;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.25s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #9f7a5b;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #b58d6b;
+            border: 2px solid #b58d6b;
+            margin-left: 12px;
+        }
+
+        .btn-outline:hover {
+            background: #b58d6b;
+            color: #fff;
+        }
+
+        /* ===== SECTION ===== */
+        section {
+            padding: 56px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        .section-sub {
+            color: #6b5f52;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+
+        .divider {
+            width: 50px;
+            height: 3px;
+            background: #b58d6b;
+            margin: 8px 0 24px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .about-grid .col {
+            flex: 1 1 300px;
+        }
+
+        .about-grid .col p {
+            margin-bottom: 16px;
+            color: #3d3832;
+        }
+
+        .info-list {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .info-list li {
+            padding: 6px 0;
+            border-bottom: 1px solid #ede8e2;
+            display: flex;
+            gap: 12px;
+        }
+
+        .info-list li strong {
+            width: 120px;
+            color: #4a3f35;
+        }
+
+        /* ===== PENDIDIKAN ===== */
+        .timeline-item {
+            border-left: 3px solid #dccfc4;
+            padding-left: 24px;
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #b58d6b;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 4px;
+        }
+
+        .timeline-item .year {
+            font-weight: 600;
+            color: #b58d6b;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+        }
+
+        .timeline-item h4 {
+            font-size: 18px;
+            margin: 2px 0 4px;
+        }
+
+        .timeline-item .detail {
+            color: #5a4f43;
+            font-size: 14px;
+        }
+
+        /* ===== PENGALAMAN ===== */
+        .exp-card {
+            background: #ffffff;
+            padding: 24px 28px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            margin-bottom: 24px;
+            border: 1px solid #f0ebe5;
+        }
+
+        .exp-card h4 {
+            font-size: 18px;
+        }
+
+        .exp-card .meta {
+            color: #7a6e60;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 2px 0 10px;
+        }
+
+        .exp-card ul {
+            padding-left: 20px;
+            color: #3d3832;
+        }
+
+        .exp-card ul li {
+            margin-bottom: 4px;
+        }
+
+        /* ===== KARYA ===== */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .work-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0ebe5;
+            transition: transform 0.2s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #ede8e2;
+        }
+
+        .work-card .info {
+            padding: 16px 18px 20px;
+        }
+
+        .work-card .info h5 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .work-card .info p {
+            font-size: 13px;
+            color: #6b5f52;
+        }
+
+        .work-card .info .tag {
+            display: inline-block;
+            background: #ede8e2;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a3f35;
+            margin-top: 6px;
+        }
+
+        .work-card .info .tag + .tag {
+            margin-left: 4px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 36px;
+            margin-top: 12px;
+        }
+
+        .contact-links a {
+            color: #4a3f35;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+            padding-bottom: 2px;
+        }
+
+        .contact-links a:hover {
+            border-color: #b58d6b;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #2d2a24;
+            color: #d6ccc2;
+            padding: 32px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer span {
+            color: #b58d6b;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-text h1 {
+                font-size: 30px;
+            }
+            .hero-image img {
+                width: 160px;
+                height: 160px;
+            }
+            nav {
+                gap: 16px;
+                margin-top: 8px;
+            }
+            .header-inner {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .info-list li {
+                flex-wrap: wrap;
+            }
+            .info-list li strong {
+                width: 100%;
+            }
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+            .work-card img {
+                height: 180px;
+            }
+            .contact-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 0 16px;
+            }
+            .hero-text h1 {
+                font-size: 26px;
+            }
+            .exp-card {
+                padding: 16px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">Pratiwi<span>Lubis</span></div>
+            <nav>
+                <a href="#about">Tentang</a>
+                <a href="#education">Pendidikan</a>
+                <a href="#experience">Pengalaman</a>
+                <a href="#works">Karya</a>
+                <a href="#contact">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero container">
+        <div class="hero-text">
+            <div class="badge">✦ Mahasiswa Ilmu Komputer</div>
+            <h1>Pratiwi <span>Lubis</span></h1>
+            <div class="subtitle">Desain Visual, Front-End Development</div>
+            <p>
+                Menyatukan keindahan desain dan logika teknologi untuk menciptakan
+                pengalaman digital yang bermakna.
+            </p>
+            <div>
+                <a href="#works" class="btn">Lihat Karya</a>
+                <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- GANTI src DENGAN FOTO PROFIL ANDA -->
+            <img src="profile.jpg" alt="Foto Pratiwi Lubis" />
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="divider"></div>
+            <div class="about-grid">
+                <div class="col">
+                    <p>
+                        Halo! Saya <strong>Pratiwi Lubis</strong>, mahasiswa Ilmu Komputer
+                        di Universitas Negeri Medan dengan latar belakang Desain Komunikasi Visual (DKV).
+                        Saya percaya bahwa desain dan teknologi adalah dua sisi dari koin yang sama.
+                        Keduanya hadir untuk menyelesaikan masalah dan menyampaikan pesan.
+                    </p>
+                    <p>
+                        Dari bangku SMK, saya sudah terbiasa menciptakan identitas visual,
+                        seperti logo, poster, undangan, hingga baliho. Kini saya memperdalam
+                        UI/UX design, front-end development, dan branding digital untuk menghadirkan
+                        karya yang tidak hanya indah, tetapi juga fungsional.
+                    </p>
+                    <p>
+                        Saya terbuka untuk kolaborasi, proyek kreatif, dan tantangan baru
+                        di dunia desain dan teknologi. Mari ciptakan sesuatu yang berarti bersama.
+                    </p>
+                </div>
+                <div class="col">
+                    <ul class="info-list">
+                        <li><strong>Nama Lengkap</strong> Pratiwi Lubis</li>
+                        <li><strong>Usia</strong> 19 tahun</li>
+                        <li><strong>Tanggal Lahir</strong> 15 Juni 2007</li>
+                        <li><strong>Semester</strong> 3</li>
+                        <li><strong>Program Studi</strong> Ilmu Komputer</li>
+                        <li><strong>Universitas</strong> Universitas Negeri Medan</li>
+                        <li><strong>Lulusan SMK</strong> Desain Komunikasi Visual, SMKN 10 Medan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PENDIDIKAN ==================== -->
+    <section id="education" style="background:#f3f0eb;">
+        <div class="container">
+            <h2 class="section-title">Pendidikan</h2>
+            <div class="divider"></div>
+
+            <div class="timeline-item">
+                <div class="year">2025 - Sekarang</div>
+                <h4>Universitas Negeri Medan</h4>
+                <div class="detail">S1 Ilmu Komputer, Semester 3</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2022 - 2025</div>
+                <h4>SMK Negeri 10 Medan</h4>
+                <div class="detail">Desain Komunikasi Visual (DKV)</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2019 - 2022</div>
+                <h4>SMP Negeri 5 Medan</h4>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2013 - 2019</div>
+                <h4>SD Islam Swasta Rabiatul Adawiyah</h4>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2012 - 2013</div>
+                <h4>TK Rabiatul Adawiyah</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PENGALAMAN ==================== -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Pengalaman</h2>
+            <div class="divider"></div>
+
+            <div class="exp-card">
+                <h4>Desainer Grafis, Percetakan Sumber Jaya</h4>
+                <div class="meta">Praktik Kerja Lapangan (PKL), 2024</div>
+                <ul>
+                    <li>Satu-satunya desainer yang menangani seluruh kebutuhan desain klien, meliputi undangan pernikahan (termasuk undangan khas Karo), brosur, kartu nama, baliho, poster, dan berbagai materi promosi lainnya.</li>
+                    <li>Telah menghasilkan lebih dari 10+ karya untuk masing-masing jenis desain (undangan, brosur, kartu nama, baliho, dan lainnya) yang dijual dan digunakan langsung oleh klien.</li>
+                    <li>Bertanggung jawab penuh atas proses kreatif dari konsep hingga produksi akhir menggunakan CorelDRAW dan Adobe Photoshop.</li>
+                    <li>Mengelola komunikasi dengan klien untuk memahami kebutuhan visual dan menyelesaikan revisi dalam tenggat waktu yang ketat.</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <h4>Staf Admin dan Perpajakan, CV Dunia Sakti Logam</h4>
+                <div class="meta">Kontrak 1 Bulan, 2025</div>
+                <ul>
+                    <li>Mengelola arsip data perusahaan dan menginput laporan keuangan dasar.</li>
+                    <li>Membantu proses administrasi perpajakan perusahaan dengan tingkat ketelitian tinggi.</li>
+                    <li>Berkolaborasi dengan tim untuk memastikan kelengkapan dokumen dan kepatuhan administrasi.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KARYA ==================== -->
+    <section id="works" style="background:#f3f0eb;">
+        <div class="container">
+            <h2 class="section-title">Karya Unggulan</h2>
+            <div class="section-sub">Beberapa proyek desain dan pengembangan yang telah saya kerjakan.</div>
+            <div class="divider"></div>
+
+            <div class="work-grid">
+
+                <!-- KARYA 1: UNDANGAN KARO -->
+                <div class="work-card">
+                    <img src="undangan-karo.jpg" alt="Undangan Pernikahan Adat Karo" />
+                    <div class="info">
+                        <h5>Undangan Pernikahan Khas Karo</h5>
+                        <p>Desain undangan pernikahan adat Karo untuk klien PKL. Dibuat dengan CorelDRAW dan Photoshop.</p>
+                        <span class="tag">CorelDRAW</span>
+                        <span class="tag">Photoshop</span>
+                    </div>
+                </div>
+
+                <!-- KARYA 2: POSTER KEMERDEKAAN -->
+                <div class="work-card">
+                    <img src="poster-kemerdekaan.jpg" alt="Poster HUT Kemerdekaan RI" />
+                    <div class="info">
+                        <h5>Poster Kemerdekaan</h5>
+                        <p>Poster bertema HUT Kemerdekaan RI yang dibuat menggunakan Ibis Paint X dan CorelDRAW.</p>
+                        <span class="tag">Ibis Paint X</span>
+                        <span class="tag">CorelDRAW</span>
+                    </div>
+                </div>
+
+                <!-- KARYA 3: WEBSITE CODING -->
+                <div class="work-card">
+                    <img src="coding.jpg" alt="Screenshot Website Portofolio HTML CSS" />
+                    <div class="info">
+                        <h5>Website Portofolio (HTML dan CSS)</h5>
+                        <p>Website portofolio pribadi pertama yang saya buat menggunakan VSCode dengan HTML dan CSS murni.</p>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">VSCode</span>
+                        <br />
+                        <a href="https://pratiwilbs.github.io/" target="_blank" style="color:#b58d6b; font-weight:600; font-size:13px; display:inline-block; margin-top:6px;">
+                            🔗 pratiwilbs.github.io
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <div class="divider"></div>
+            <p style="margin-bottom:16px; color:#5a4f43;">
+                Saya selalu terbuka untuk diskusi, kolaborasi, atau sekadar berbagi ide.
+                Temukan saya di platform berikut.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:pratiwi150607@gmail.com">✉️ pratiwi150607@gmail.com</a>
+                <a href="https://pratiwilbs.github.io/" target="_blank">🌐 pratiwilbs.github.io</a>
+                <a href="https://instagram.com/sky_blwue" target="_blank">📸 @sky_blwue</a>
+                <a href="https://linkedin.com/in/pratiwilbs" target="_blank">🔗 linkedin.com/in/pratiwilbs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            &copy; 2026 <span>Pratiwi Lubis</span>. Desain dan Teknologi Beriringan.
+        </div>
+    </footer>
+
+</body>
+</html>
